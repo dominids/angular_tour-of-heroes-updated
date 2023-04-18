@@ -67,3 +67,26 @@
 .heroes .name {
     align-self: center;
 }
+.add-button {
+    padding: .5rem 1.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.add-button:hover {
+    color: white;
+    background-color: #42545C;
+}
+
+button.delete {
+    background-color: white;
+    color: #525252;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1px 10px 1px 10px;
+}
+
+button.delete:hover {
+    background-color: #da1010;
+    color: white;
+}
