@@ -16,6 +16,11 @@ export class HeroDetailComponent {
     private heroService: HeroService,
     private location: Location
   ) { }
+  submitted = false;
+  onSubmit() { this.submitted = true; }
+
+  classes = ['support', 'attack',
+    'ranger', 'tank', 'flanker'];
 
   ngOnInit(): void {
     this.getHero();
