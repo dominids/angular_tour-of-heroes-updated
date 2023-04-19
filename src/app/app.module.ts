@@ -14,7 +14,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
- 
+import { OpenCloseComponent } from './open-close/open-close.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,11 @@ import { ListComponent } from './list/list.component';
     HeroSearchComponent,
     FormComponent,
     ListComponent,
+    OpenCloseComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -43,5 +46,7 @@ import { ListComponent } from './list/list.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
+  
  }

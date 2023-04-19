@@ -1,13 +1,21 @@
 /* Application-wide Styles */
-.contaner{
+.contaner {
     height: 100vh;
     display: flex;
-    align-items:flex-start;
-    justify-content:center;
+    align-items: flex-start;
+    justify-content: center;
 
 }
 .content {
-    height: 660px;
+    height: 600px;
+    width: 70%;
+    float:right;
+}
+.cont2{
+    width: 100%;
+}
+.list {
+    width: 30%;
 }
 .menuL a {
     cursor: pointer;
@@ -17,7 +25,8 @@
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
 }
-.menuL{
+
+.menuL {
     float: right;
     background-color: #eee;
     min-width: 19.5%;
@@ -37,34 +46,40 @@
     float: left;
     background-color: #eee;
 }
+
 .h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 300%;
     float: left;
     background-color: #eee;
+    padding-right: 600px;
 }
-.h1-2{
+
+.h1-2 {
     padding: 10px;
     padding-left: 10px;
-    padding-right: 300px;
+    cursor: pointer;
 }
+
 nav {
     background-color: #eee;
 }
 
 nav a {
     text-decoration: none;
-    float:left;
+    float: left;
     border: 2px solid black;
     transition: 0.3s;
 }
 
-nav .border{
+nav .border {
     border-right: none;
 }
 
-.menuR .bar1, .menuR .bar2, .menuR .bar3 {
+.menuR .bar1,
+.menuR .bar2,
+.menuR .bar3 {
     transition: 0.4s;
     background-color: black;
 }
@@ -98,6 +113,7 @@ button {
     color: #333;
     font-family: Cambria, Georgia, serif;
 }
+
 button {
     background-color: #eee;
     border: none;
@@ -111,11 +127,13 @@ button {
     margin-top: 1rem;
     transition: 0.5s;
 }
+
 nav a:hover,
 button:hover {
     background-color: black;
     color: white;
 }
+
 button:disabled {
     background-color: #eee;
     color: #aaa;
@@ -127,14 +145,15 @@ button:disabled {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-footer{
+footer {
     clear: both;
     background-color: #eee;
 }
-footer .creator{
+
+footer .creator {
     padding: 10px;
-        padding-bottom: 30px;
-        margin-bottom: 0px;
-        font-size: 120%;
-        text-align: right;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    font-size: 120%;
+    text-align: right;
 }
