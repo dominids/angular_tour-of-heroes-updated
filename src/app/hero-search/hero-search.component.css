@@ -1,5 +1,7 @@
 /* HeroSearch private styles */
-
+.list{
+    padding-top: 80px;
+}
 label {
     display: block;
     font-weight: bold;

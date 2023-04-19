@@ -1,8 +1,26 @@
-<h1>{{title}}</h1>
-<nav>
-    <a class="menu" routerLink="/dashboard">Dashboard</a>
-    <a class="menu" routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div class="contaner">
+<div>
+    <nav>
+        <div class="menuR" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="h1"><div class="h1-2">{{title}}</div></div>
+        <div class="menuL">
+            <a  routerLink="/dashboard">Dashboard</a>
+            <a  routerLink="/heroes">Heroes</a>
+        </div>
+    </nav>
+    <div class="content">
+    <router-outlet></router-outlet>
+    </div>
+    <footer>
+        <p class="creator">Creator: Dominik Kłyszyński</p>
+    </footer>
+    <footer>
+        <app-messages></app-messages>
+    </footer>
+</div>
+</div>
  

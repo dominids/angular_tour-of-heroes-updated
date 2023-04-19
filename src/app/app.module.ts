@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //animations
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -13,6 +13,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
  
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormComponent } from './form/form.component';
     DashboardComponent,
     HeroSearchComponent,
     FormComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

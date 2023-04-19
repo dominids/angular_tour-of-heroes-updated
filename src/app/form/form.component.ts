@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero, Hero2 } from '../hero';
 import { HeroService } from '../hero.service';
+import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../message.service';
+import { HEROES } from '../mock-heroes';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form',
@@ -10,19 +13,23 @@ import { MessageService } from '../message.service';
 })
 
 export class FormComponent implements OnInit {
-
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) { }
   heroes: Hero[] = [];
   submitted = false;
   onSubmit() { this.submitted = true; }
   model = new Hero2(1, '', '',);
 
-  classes = ['support', 'attack',
-    'ranger', 'tank', 'flanker'];
-
-  constructor(private heroService: HeroService) { }
+  classes = ['support', 'attack','ranger', 'tank', 'flanker'];
 
   ngOnInit(): void {
     this.getHeroes();
+  }
+  goBack(): void {
+    this.location.back();
   }
 
   getHeroes(): void {

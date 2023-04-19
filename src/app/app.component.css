@@ -1,26 +1,86 @@
 /* Application-wide Styles */
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-}
+.contaner{
+    height: 100vh;
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
 
-.menu {
-    background-color: #eee;
-    border: none;
-    border-radius: 4px;
+}
+.content {
+    height: 660px;
+}
+.menuL a {
     cursor: pointer;
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+}
+.menuL{
+    float: right;
+    background-color: #eee;
+    min-width: 19.5%;
+    max-width: 30%;
+}
 
+.menuR div {
+    width: 55px;
+    height: 10px;
+    background-color: black;
+    margin: 11px;
+    background-color: #eee;
 }
-a{
+
+.menuR {
+    cursor: pointer;
+    float: left;
+    background-color: #eee;
+}
+.h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 300%;
+    float: left;
+    background-color: #eee;
+}
+.h1-2{
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 300px;
+}
+nav {
+    background-color: #eee;
+}
+
+nav a {
     text-decoration: none;
+    float:left;
+    border: 2px solid black;
+    transition: 0.3s;
 }
+
+nav .border{
+    border-right: none;
+}
+
+.menuR .bar1, .menuR .bar2, .menuR .bar3 {
+    transition: 0.4s;
+    background-color: black;
+}
+
+.change .bar1 {
+    background-color: #369;
+}
+
+.change .bar2 {
+    background-color: #369;
+}
+
+.change .bar3 {
+    background-color: #369;
+}
+
 h2,
 h3 {
     color: #444;
@@ -38,7 +98,6 @@ button {
     color: #333;
     font-family: Cambria, Georgia, serif;
 }
-
 button {
     background-color: #eee;
     border: none;
@@ -50,13 +109,13 @@ button {
     margin-right: 1rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    transition: 0.5s;
 }
-
+nav a:hover,
 button:hover {
     background-color: black;
     color: white;
 }
-
 button:disabled {
     background-color: #eee;
     color: #aaa;
@@ -66,4 +125,16 @@ button:disabled {
 /* everywhere else */
 * {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+footer{
+    clear: both;
+    background-color: #eee;
+}
+footer .creator{
+    padding: 10px;
+        padding-bottom: 30px;
+        margin-bottom: 0px;
+        font-size: 120%;
+        text-align: right;
 }

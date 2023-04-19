@@ -1,4 +1,9 @@
 /* HeroesComponent's private CSS styles */
+.list{
+    width: 25%;
+    padding-top: 100px;
+}
+
 .heroes {
     margin: 0 0 2em 0;
     list-style-type: none;
@@ -88,5 +93,23 @@ button.delete {
 
 button.delete:hover {
     background-color: #da1010;
+    color: white;
+}
+
+button {
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: black;
     color: white;
 }

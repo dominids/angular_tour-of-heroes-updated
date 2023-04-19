@@ -2,6 +2,15 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+.form-control {
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control:hover{
+    box-shadow: 1px 0px 8px 2px #369;;
+    border-right-color: #369;
+    border-bottom-color: #369;
+    border-top-color: #369;
+}
 .ng-valid[required],
 .ng-valid.required {
     border-left: 5px solid #42A948;
