@@ -17,7 +17,7 @@ import {
       state('open', style({
         height: '1px',
         opacity: 1,
-        width: '10px',
+        width: '1px',
       })),
       state('closed', style({
         height: '0px',
