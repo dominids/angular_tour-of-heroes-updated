@@ -15,6 +15,7 @@ import {
   animations: [
     trigger('openClose', [
       state('open', style({
+        zIndex: '10'
       })),
 
       state('closed', style({
@@ -24,10 +25,10 @@ import {
       transition('open => closed', [
         animate('500ms ease',
           keyframes([
-            style({ transform: 'translateY(-10%)' }),
+            style({ zIndex: '-10',transform: 'translateY(-10%)' }),
             style({ transform: 'translateY(-50%)' }),
             style({ transform: 'translateY(-80%)' }),
-            style({ transform: 'translateY(-113%)' })
+            style({ transform: 'translateY(-113%)',})
           ]))
       ]),
 
