@@ -1,10 +1,11 @@
-import { Component,HostBinding } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import {
   trigger,
   state,
   style,
   animate,
   transition,
+  keyframes,
   // ...
 } from '@angular/animations';
 @Component({
@@ -13,32 +14,41 @@ import {
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('openClose', [
-      // ...
       state('open', style({
-        height: '1px',
-        opacity: 1,
-        width: '1px',
       })),
+
       state('closed', style({
-        height: '0px',
-        opacity: 0.0,
-        width: '0px',
+        transform: 'translateY(-150%)',
       })),
+
       transition('open => closed', [
-        animate('0.3s')
+        animate('500ms ease',
+          keyframes([
+            style({ transform: 'translateY(-10%)' }),
+            style({ transform: 'translateY(-50%)' }),
+            style({ transform: 'translateY(-80%)' }),
+            style({ transform: 'translateY(-113%)' })
+          ]))
       ]),
+
       transition('closed => open', [
-        animate('0.2s')
+        animate('500ms ease',
+          keyframes([
+            style({ transform: 'translateY(-95%)' }),
+            style({ transform: 'translateY(-80%)' }),
+            style({ transform: 'translateY(-60%)' }),
+            style({ transform: 'translateY(-30%)' }),
+            style({ transform: 'translateY(0)' })
+          ]))
       ]),
     ])
   ]
 })
-export class AppComponent { 
+export class AppComponent {
   title = 'Tour of Heroes';
   isOpen = false;
 
   toggle() {
     this.isOpen = !this.isOpen;
   }
-}            
-     
+}

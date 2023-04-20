@@ -6,16 +6,19 @@
     justify-content: center;
 
 }
+:host {
+    display: block;
+    margin-top: 1rem;
+}
 .content {
     height: 600px;
     width: 70%;
     float:right;
 }
 .cont2{
-    width: 100%;
-}
-.list {
-    width: 30%;
+    width: 80%;
+    float: left;
+    z-index: 0;
 }
 .menuL a {
     cursor: pointer;

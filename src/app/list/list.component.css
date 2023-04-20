@@ -10,8 +10,7 @@
     display: flex;
 }
 .list{
-    width: 30%;
-    float: left;
+    float:left;
 }
 
 .heroes a {
