@@ -1,26 +1,84 @@
-/* Application-wide Styles */
+/*----------BASE--------------*/
 .contaner {
     height: 100vh;
     display: flex;
-    align-items: flex-start;
     justify-content: center;
 
 }
-:host {
-    display: block;
-    margin-top: 1rem;
+
+.center {
+    flex: 300px;
+    display: flex;
+    flex-flow: column;
 }
+
+/*----------NAV--------------*/
+nav{
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row;
+}
+
+nav .links a{
+    text-decoration: none;
+    border: 2px solid black;
+    transition: 0.3s;
+}
+nav .links a:hover{
+    background-color: black;
+    color: white;
+}
+
+nav .title{
+}
+
+
+/* Ta jebana ikonka w lewym górnym */
+
+nav .menu-icon .bar1,
+nav .menu-icon .bar2,
+nav .menu-icon .bar3 {
+    transition: 0.4s;
+    background-color: black;
+}
+
+nav .change .bar1 {
+    background-color: #369;
+}
+
+nav .change .bar2 {
+    background-color: #369;
+}
+
+nav .change .bar3 {
+    background-color: #369;
+}
+/*----------CONTENT--------------*/
 .content {
-    height: 600px;
-    width: 70%;
-    float:right;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.cont2{
-    width: 80%;
-    float: left;
-    z-index: 0;
+
+
+/*----------FOOTER--------------*/
+footer{
+    border: 1px solid orange;
+    clear: both;
+    background-color: #eee;
 }
-.menuL a {
+
+footer .creator {
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    font-size: 120%;
+    text-align: right;
+}
+
+
+
+/*.menuL a {
     cursor: pointer;
     color: black;
     font-size: 1.6rem;
@@ -28,6 +86,7 @@
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
 }
+
 
 .menuL {
     float: right;
@@ -79,35 +138,43 @@ nav a {
 nav .border {
     border-right: none;
 }
+*/
 
-.menuR .bar1,
-.menuR .bar2,
-.menuR .bar3 {
-    transition: 0.4s;
-    background-color: black;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------REST--------------*/
+
+:host {
+    display: block;
+    margin-top: 1rem;
 }
 
-.change .bar1 {
-    background-color: #369;
-}
-
-.change .bar2 {
-    background-color: #369;
-}
-
-.change .bar3 {
-    background-color: #369;
-}
 
 h2,
 h3 {
     color: #444;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-}
-
-body {
-    margin: 2em;
 }
 
 body,
@@ -131,7 +198,6 @@ button {
     transition: 0.5s;
 }
 
-nav a:hover,
 button:hover {
     background-color: black;
     color: white;
@@ -146,17 +212,4 @@ button:disabled {
 /* everywhere else */
 * {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-footer {
-    clear: both;
-    background-color: #eee;
-}
-
-footer .creator {
-    padding: 10px;
-    padding-bottom: 30px;
-    margin-bottom: 0px;
-    font-size: 120%;
-    text-align: right;
 }

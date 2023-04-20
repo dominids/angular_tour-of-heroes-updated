@@ -1,31 +1,45 @@
 <div class="contaner">
-    <div>
-        <nav>
-            <div class="menuR" (click)="toggle()" onclick="myFunction(this)">
+    <div class="center">
+
+        <nav class="element1">
+            <div class="menu-icon" (click)="toggle()" onclick="myFunction(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
-            <div class="h1">
-                <div class="h1-2" routerLink="/dashboard">{{title}}</div>
+            <div class="title">
+                <a class="title2" routerLink="/dashboard">{{title}}</a>
             </div>
-            <div class="menuL">
-                <a routerLink="/form">New hero</a>
+            <div class="links">
+                <a  routerLink="/form">New hero</a>
                 <a routerLink="/heroes">Heroes</a>
             </div>
         </nav>
 
-        <div class="cont2">
-            <app-list style="z-index: -10; position:absolute" [@openClose]="isOpen ? 'open' : 'closed'" class="list"></app-list>
-            <div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="content element2">
+            <app-list style="z-index: -10; position:absolute" [@openClose]="isOpen ? 'open' : 'closed'"
+                class="list"></app-list>
+            <div class="app">
                 <router-outlet></router-outlet>
             </div>
         </div>
 
-        <footer>
+
+        <footer class="element3">
             <p class="creator">Creator: Dominik Kłyszyński</p>
-        </footer>
-        <footer>
             <app-messages></app-messages>
         </footer>
     </div>
