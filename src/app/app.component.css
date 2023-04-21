@@ -131,17 +131,16 @@ nav .links a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
     min-height: 75vh;
-    display: flex;
-    flex-direction: row;
 }
 
 .app{
-    width: 200%;
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
 }
 /*----------FOOTER--------------*/
 footer {
     border: 1px solid #369;
-    clear: both;
     background-color: #eee;
 }
 
