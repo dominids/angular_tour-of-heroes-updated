@@ -1,4 +1,7 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ViewChild, NgModule } from '@angular/core';
+import { ListComponent } from './list/list.component';
+import { CommonModule } from '@angular/common';
+import { HeroService } from './hero.service';
 import {
   trigger,
   state,
@@ -8,6 +11,8 @@ import {
   keyframes,
   // ...
 } from '@angular/animations';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -47,12 +52,13 @@ import {
   ]
 })
 export class AppComponent {
+  constructor(){
+  }
   title = 'Tour of Heroes';
   isOpen = false;
   ngOnInit(): void {
     
   }
-
   toggle() {
     this.isOpen = !this.isOpen;
   }

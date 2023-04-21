@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { FormComponent } from './form/form.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

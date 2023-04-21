@@ -1,10 +1,9 @@
 <div class="list">
     <ul class="heroes">
         <li *ngFor="let hero of heroes">
-            <a routerLink="/detail/{{hero.id}}">
+            <a routerLink="/detail/{{hero.id}}" (click)="restart()">
                 <span class="badge">{{hero.id}}</span><span class="badge2"> {{hero.name}} </span>
             </a>
-            <!--<button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>-->
         </li>
     </ul>
     <!--<button routerLink="/form">Create new hero</button>-->
