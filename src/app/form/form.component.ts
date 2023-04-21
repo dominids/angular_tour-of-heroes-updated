@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../message.service';
 import { HEROES } from '../mock-heroes';
 import { Location } from '@angular/common';
+import { ListComponent } from '../list/list.component';
 
 @Component({
   selector: 'app-form',

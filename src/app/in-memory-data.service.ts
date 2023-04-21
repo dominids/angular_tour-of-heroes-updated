@@ -8,15 +8,15 @@ import { Hero } from './hero';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 12, name: 'Dr. Nice', class: 'support' },
-      { id: 13, name: 'Bombasto', class: 'attack' },
-      { id: 14, name: 'Celeritas', class: 'flanker' },
-      { id: 15, name: 'Magneta', class: 'support' },
-      { id: 16, name: 'RubberMan', class: 'tank' },
-      { id: 17, name: 'Dynama', class: 'flanker' },
-      { id: 18, name: 'Dr. IQ', class: 'attack' },
-      { id: 19, name: 'Magma', class: 'tank' },
-      { id: 20, name: 'Tornado', class: 'attack' }
+      { id: 1, name: 'Dr. Nice', class: 'support' },
+      { id: 2, name: 'Bombasto', class: 'attack' },
+      { id: 3, name: 'Celeritas', class: 'flanker' },
+      { id: 4, name: 'Magneta', class: 'support' },
+      { id: 5, name: 'RubberMan', class: 'tank' },
+      { id: 6, name: 'Dynama', class: 'flanker' },
+      { id: 7, name: 'Dr. IQ', class: 'attack' },
+      { id: 8, name: 'Magma', class: 'tank' },
+      { id: 9, name: 'Tornado', class: 'attack' }
     ];
     return { heroes };
   }
@@ -27,6 +27,6 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
   genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
+    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1:9;
   }
 }

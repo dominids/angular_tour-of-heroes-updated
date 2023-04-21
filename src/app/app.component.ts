@@ -49,6 +49,9 @@ import {
 export class AppComponent {
   title = 'Tour of Heroes';
   isOpen = false;
+  ngOnInit(): void {
+    
+  }
 
   toggle() {
     this.isOpen = !this.isOpen;

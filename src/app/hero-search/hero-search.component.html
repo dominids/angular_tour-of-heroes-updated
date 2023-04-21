@@ -1,9 +1,5 @@
-
-<div class="list">
 <div id="search-component">
-    <label for="search-box">Hero Search</label>
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
+    <input type="search" #searchBox placeholder="Search for hero" id="search-box" (blur)="search('')" (input)="search(searchBox.value)" (focus)="search(searchBox.value)" />
     <ul class="search-result">
         <li *ngFor="let hero of heroes$ | async">
             <a routerLink="/detail/{{hero.id}}">
@@ -11,5 +7,4 @@
             </a>
         </li>
     </ul>
-</div>
 </div>

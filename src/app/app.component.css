@@ -13,23 +13,12 @@
 }
 
 /*----------NAV--------------*/
-nav{
+nav {
     border: 1px solid blue;
     display: flex;
     flex-flow: row;
-}
-
-nav .links a{
-    text-decoration: none;
-    border: 2px solid black;
-    transition: 0.3s;
-}
-nav .links a:hover{
-    background-color: black;
-    color: white;
-}
-
-nav .title{
+    background-color: #eee;
+    flex-wrap: wrap;
 }
 
 
@@ -40,6 +29,20 @@ nav .menu-icon .bar2,
 nav .menu-icon .bar3 {
     transition: 0.4s;
     background-color: black;
+}
+
+nav .menu-icon div {
+    width: 50px;
+    height: 10px;
+    background-color: black;
+    margin: 10px;
+    background-color: #eee;
+}
+
+nav .menu-icon {
+    cursor: pointer;
+    background-color: #eee;
+    width: 70px;
 }
 
 nav .change .bar1 {
@@ -53,17 +56,84 @@ nav .change .bar2 {
 nav .change .bar3 {
     background-color: #369;
 }
+/* search bar */
+nav .search-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 2 200px;
+    min-width: 150px;
+    margin-right: 16px;
+}
+
+/* title */
+.title {
+    align-self: center;
+}
+
+.title2 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 310%;
+    background-color: #eee;
+    text-decoration: none;
+}
+
+/* links on the right */
+
+nav .links a {
+    text-decoration: none;
+    border: 2px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+    color: black;
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+}
+
+nav .links a:hover {
+    background-color: #369;
+    color: white;
+    
+}
+
+.links {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+/* responsive */
+@media (min-width: 1000px) {
+    .search-bar input {
+        transition: width .4s ease-in-out;
+    }
+
+    .search-bar input:focus {
+        width: 300px;
+    }
+}
+
+@media (max-width:800px){
+    app-hero-search{
+            width: 100%;
+        }
+}
+
 /*----------CONTENT--------------*/
 .content {
-    border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
+    min-height: 75vh;
 }
 
 
 /*----------FOOTER--------------*/
-footer{
-    border: 1px solid orange;
+footer {
+    border: 1px solid #369;
     clear: both;
     background-color: #eee;
 }
@@ -75,92 +145,6 @@ footer .creator {
     font-size: 120%;
     text-align: right;
 }
-
-
-
-/*.menuL a {
-    cursor: pointer;
-    color: black;
-    font-size: 1.6rem;
-    padding: 1rem;
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
-}
-
-
-.menuL {
-    float: right;
-    background-color: #eee;
-    min-width: 19.5%;
-    max-width: 30%;
-}
-
-.menuR div {
-    width: 55px;
-    height: 10px;
-    background-color: black;
-    margin: 11px;
-    background-color: #eee;
-}
-
-.menuR {
-    cursor: pointer;
-    float: left;
-    background-color: #eee;
-}
-
-.h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 300%;
-    float: left;
-    background-color: #eee;
-    padding-right: 600px;
-}
-
-.h1-2 {
-    padding: 10px;
-    padding-left: 10px;
-    cursor: pointer;
-}
-
-nav {
-    background-color: #eee;
-}
-
-nav a {
-    text-decoration: none;
-    float: left;
-    border: 2px solid black;
-    transition: 0.3s;
-}
-
-nav .border {
-    border-right: none;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*----------REST--------------*/
 
@@ -201,6 +185,7 @@ button {
 button:hover {
     background-color: black;
     color: white;
+
 }
 
 button:disabled {
