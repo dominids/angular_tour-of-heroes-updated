@@ -35,6 +35,7 @@ export class FormComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
+    
       .subscribe(heroes => this.heroes = heroes);
   }
   add(name: string, classes: string): void {
