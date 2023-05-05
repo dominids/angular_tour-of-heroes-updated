@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   heroes: Hero[] = [];
   submitted = false;
   onSubmit() { this.submitted = true; }
-  model = new user2('', '','');
+  model = new user2('', '', '');
 
   ngOnInit(): void {
     this.getHeroes();

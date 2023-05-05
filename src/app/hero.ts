@@ -13,9 +13,14 @@ export class Hero2 {
     ) { }
 
 }
+export interface User {
+    _id?: string;
+    username: string;
+    email: string;
+    password: string;
+}
 
 export class user2 {
-
     constructor(
         public username: string,
         public email: string,

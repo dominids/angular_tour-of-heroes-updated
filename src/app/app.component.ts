@@ -1,4 +1,4 @@
-import { Component, HostBinding, ViewChild, NgModule } from '@angular/core';
+import { Component, HostBinding, ViewChild, NgModule, OnInit } from '@angular/core';
 import { ListComponent } from './list/list.component';
 import { CommonModule } from '@angular/common';
 import { HeroService } from './hero.service';
@@ -11,6 +11,7 @@ import {
   keyframes,
   // ...
 } from '@angular/animations';
+import { UserService } from './service/user.service';
 
 
 @Component({
@@ -51,14 +52,14 @@ import {
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(){
   }
   title = 'Tour of Heroes';
   user='Login';
   isOpen = false;
   ngOnInit(): void {
-    
+
   }
   toggle() {
     this.isOpen = !this.isOpen;
