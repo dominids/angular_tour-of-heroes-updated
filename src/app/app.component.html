@@ -9,12 +9,15 @@
             <div class="title">
                 <a class="title2" routerLink="/dashboard">{{title}}</a>
             </div>
+            <div class="links">
+                <a  routerLink="/form">New hero</a>
+                <a routerLink="/heroes">Heroes</a>
+            </div>
             <div class="search-bar">
                 <app-hero-search></app-hero-search>
             </div>
             <div class="links">
-                <a  routerLink="/form">New hero</a>
-                <a routerLink="/heroes">Heroes</a>
+                <a routerLink="/login">{{user}}</a>
             </div>
         </nav>
         <div class="content element2">

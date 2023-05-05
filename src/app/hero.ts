@@ -13,3 +13,13 @@ export class Hero2 {
     ) { }
 
 }
+
+export class user2 {
+
+    constructor(
+        public username: string,
+        public email: string,
+        public password: string,
+    ) { }
+
+}

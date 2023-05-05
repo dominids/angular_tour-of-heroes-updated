@@ -55,6 +55,7 @@ export class AppComponent {
   constructor(){
   }
   title = 'Tour of Heroes';
+  user='Login';
   isOpen = false;
   ngOnInit(): void {
     
