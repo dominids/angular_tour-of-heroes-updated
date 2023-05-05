@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema({
+const heroSchema = mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
         require: true,
@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, "Please add the hero name"],
     },
-    class: {
+    clas: {
         type: String,
         required: [true, "Please add the hero class"],
     },
@@ -19,4 +19,4 @@ const userSchema = mongoose.Schema({
 }
 );
 
-module.exports=mongoose.model("User", userSchema);
+module.exports=mongoose.model("Hero", heroSchema);

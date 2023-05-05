@@ -1,14 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const {
-    getUsers,
-    createUser,
-    getUser,
-    updateUser,
-    deleteUser
+    getHeroes,
+    createHero,
+    getHero,
+    updateHero,
+    deleteHero
 } = require("../controllers/heroesController");
-router.route("/").get(getUsers).post(createUser);
+const validateToken = require("../middleware/validateTokenHandler");
 
-router.route("/:id").get(getUser).put(updateUser).delete(deleteUser);
+router.use(validateToken);
+router.route("/").get(getHeroes).post(createHero);
+router.route("/:id").get(getHero).put(updateHero).delete(deleteHero);
 
 module.exports = router;

@@ -1,80 +1,86 @@
 const asyncHandler = require("express-async-handler");
-const User = require("../models/heroModel");
-//@desc Get all Users 
-//@route GET /api/users
-//@access  public
-const getUsers = asyncHandler(async (req, res) => {
-    const Users = await User.find();
-    res.status(200).json(Users);
+const Hero = require("../models/heroModel");
+//@desc Get all Heros 
+//@route GET /api/heroes
+//@access  private
+const getHeroes = asyncHandler(async (req, res) => {
+    const Heroes = await Hero.find({ user_id: req.user.id });
+    res.status(200).json(Heroes);
 });
 
-//@desc Create New User
-//@route POST /api/users
-//@access  public
-const createUser = asyncHandler(async (req, res) => {
+//@desc Create New Hero
+//@route POST /api/heroes
+//@access  private
+const createHero = asyncHandler(async (req, res) => {
     console.log("The req body is:", req.body);
-    const {name, username, email, phone } = req.body;
-    if (!username || !name || !email || !phone) {
+    const { name, clas } = req.body;
+    if (!name || !clas) {
         res.status(400);
         throw new Error("All fields are mandatory!")
     }
-    const user = await User.create({
+    const hero = await Hero.create({
         name,
-        username,
-        email,
-        phone,
+        clas,
+        user_id: req.user.id
     })
-    res.status(201).json(user);
+    res.status(201).json(hero);
 });
-//@desc Get User
-//@route GET /api/users/:id
-//@access  public
-const getUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (!User) {
+//@desc Get Hero
+//@route GET /api/heroes/:id
+//@access  private
+const getHero = asyncHandler(async (req, res) => {
+    const hero = await Hero.findById(req.params.id);
+    if (!Hero) {
         res.status(404);
-        throw new Error("User not found");
+        throw new Error("Hero not found");
     }
-    res.status(200).json(user);
+    res.status(200).json(hero);
 });
 
-//@desc Update User
-//@route POST /api/users/:id
-//@access  public
-const updateUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (!User) {
+//@desc Update Hero
+//@route POST /api/heros/:id
+//@access  private
+const updateHero = asyncHandler(async (req, res) => {
+    const hero = await Hero.findById(req.params.id);
+    if (!hero) {
         res.status(404);
-        throw new Error("User not found");
+        throw new Error("Hero not found");
     }
-
-    const updatedUser = await User.findByIdAndUpdate(
+    if (hero.user_id.toString() !== req.user.id) {
+        res.status(403);
+        throw new Error("User don't have permisson to update other user contacts");
+    }
+    const updatedHero = await Hero.findByIdAndUpdate(
         id,
         req.body,
         { new: true }
     );
 
-    res.status(200).json(updatedUser);
+    res.status(200).json(updatedHero);
 });
 
-//@desc Delete User
-//@route DELETE /api/users/:id
-//@access public
-const deleteUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (!user) {
+//@desc Delete Hero
+//@route DELETE /api/heroes/:id
+//@access private
+const deleteHero = asyncHandler(async (req, res) => {
+    const hero = await Hero.findById(req.params.id);
+    if (!hero) {
         res.status(404);
-        throw new Error("User not found");
+        throw new Error("Hero not found");
     }
-    await User.deleteOne({ _id: req.params.id });
-    res.status(200).json(user);
+    if (hero.user_id.toString() !== req.user.id) {
+        res.status(403);
+        throw new Error("User don't have permisson to update other user heroes");
+    }
+    await Hero.deleteOne({ _id: req.params.id });
+    res.status(200).json(hero);
 });
 
 
 module.exports = {
-    getUsers,
-    createUser,
-    getUser,
-    updateUser,
-    deleteUser
+    getHeroes,
+    createHero,
+    getHero,
+    updateHero,
+    deleteHero
 };
