@@ -5,10 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../service/message.service';
 import { Location } from '@angular/common';
 import { ListComponent } from '../list/list.component';
-import { Router, response } from 'express';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +20,8 @@ export class LoginComponent{
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private router: AppRoutingModule,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
   heroes: Hero[] = [];
   submitted = false;
@@ -36,6 +36,9 @@ export class LoginComponent{
     this.authService
       .login(name, password)
       .subscribe((response: any) => {
+        this.router.navigate(['dashboard']);
       });
+
+    
   }
 }

@@ -10,29 +10,31 @@ import { UserService } from '../service/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent{
+export class RegisterComponent {
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
     private location: Location
   ) { }
   submitted = false;
-  onSubmit() { this.submitted = true; }
   model = new user2('', '', '');
 
-  private user: User = {
-    "username": "Mark",
-    "email": "mark4@gmail.com",
-    "password": "1234567",
-  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    this.model = {
+      "username": this.model.username.trim(),
+      "email": this.model.email.trim(),
+      "password": this.model.password.trim(),
+    }
+
+      this.userService.createUser(this.model).subscribe(
+        (response) => console.log(response),
+        (error: any) => console.log(error),
+        () => console.log('Done creating users')
+  )}
   
-  onCreateUser(): void {
-    this.userService.createUser(this.user).subscribe(
-      (response) => console.log(response),
-      (error: any) => console.log(error),
-      () => console.log('Done creating users')
-    )
-  }
   goBack(): void {
     this.location.back();
   }
