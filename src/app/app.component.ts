@@ -13,6 +13,7 @@ import {
 } from '@angular/animations';
 import { UserService } from './service/user.service';
 import {AuthService} from './service/auth.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -54,7 +55,7 @@ import {AuthService} from './service/auth.service'
   ]
 })
 export class AppComponent implements OnInit {
-  constructor(public authService: AuthService){
+  constructor(public authService: AuthService, private router: Router){
   }
   title = 'Tour of Heroes';
   isOpen = false;
@@ -63,5 +64,9 @@ export class AppComponent implements OnInit {
   }
   toggle() {
     this.isOpen = !this.isOpen;
+  }
+  logout(){
+    localStorage.removeItem("Bearer");
+    this.router.navigate(['login']);
   }
 }
