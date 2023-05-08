@@ -6,6 +6,7 @@ const Hero = require("../models/heroModel");
 const getHeroes = asyncHandler(async (req, res) => {
     const Heroes = await Hero.find({ user_id: req.user.id });
     res.status(200).json(Heroes);
+    
 });
 
 //@desc Create New Hero
