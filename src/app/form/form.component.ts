@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero, Hero2 } from '../hero';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../service/hero.service';
 import { ActivatedRoute } from '@angular/router';
-import { MessageService } from '../message.service';
+import { MessageService } from '../service/message.service';
 import { HEROES } from '../mock-heroes';
 import { Location } from '@angular/common';
 import { ListComponent } from '../list/list.component';

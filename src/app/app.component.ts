@@ -1,7 +1,7 @@
 import { Component, HostBinding, ViewChild, NgModule, OnInit } from '@angular/core';
 import { ListComponent } from './list/list.component';
 import { CommonModule } from '@angular/common';
-import { HeroService } from './hero.service';
+import { HeroService } from './service/hero.service';
 import {
   trigger,
   state,
