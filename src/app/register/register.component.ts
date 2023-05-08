@@ -22,7 +22,7 @@ export class RegisterComponent{
 
   private user: User = {
     "username": "Mark",
-    "email": "mark3@gmail.com",
+    "email": "mark4@gmail.com",
     "password": "1234567",
   }
   
