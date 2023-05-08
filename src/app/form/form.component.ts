@@ -3,7 +3,6 @@ import { Hero, Hero2 } from '../hero';
 import { HeroService } from '../service/hero.service';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../service/message.service';
-import { HEROES } from '../mock-heroes';
 import { Location } from '@angular/common';
 import { ListComponent } from '../list/list.component';
 
@@ -38,11 +37,11 @@ export class FormComponent implements OnInit {
     
       .subscribe(heroes => this.heroes = heroes);
   }
-  add(name: string, classes: string): void {
+  add(name: string, clas: string): void {
     name = name.trim();
-    classes = classes.trim();
+    clas = clas.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name, class: classes } as Hero)
+    this.heroService.addHero({ name, clas } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });

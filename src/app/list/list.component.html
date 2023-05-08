@@ -1,8 +1,8 @@
 <div class="list">
     <ul class="heroes">
         <li *ngFor="let hero of heroes">
-            <a routerLink="/detail/{{hero.id}}" (click)="restart()">
-                <span class="badge">{{hero.id}}</span><span class="badge2"> {{hero.name}} </span>
+            <a routerLink="/detail/{{hero._id}}" (click)="restart()">
+                <span class="badge2"> {{hero.name}} </span>
             </a>
         </li>
     </ul>

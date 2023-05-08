@@ -1,7 +1,7 @@
 <div *ngIf="hero">
   <div class="container">
     <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
+    <div><span>id: </span>{{hero._id}}</div>
   <div [hidden]="submitted">
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       <div class="form-group">
@@ -15,7 +15,7 @@
 
       <div class="form-group">
         <label for="power">Hero Class</label>
-        <select class="form-control" id="power" required [(ngModel)]="hero.class" name="power" #power="ngModel"
+        <select class="form-control" id="power" required [(ngModel)]="hero.clas" name="power" #power="ngModel"
           #heroClass>
           <option *ngFor="let pow of classes" [value]="pow">{{pow}}</option>
         </select>

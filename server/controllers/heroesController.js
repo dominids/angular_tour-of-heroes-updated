@@ -6,7 +6,7 @@ const Hero = require("../models/heroModel");
 const getHeroes = asyncHandler(async (req, res) => {
     const Heroes = await Hero.find({ user_id: req.user.id });
     res.status(200).json(Heroes);
-    
+
 });
 
 //@desc Create New Hero
@@ -39,7 +39,7 @@ const getHero = asyncHandler(async (req, res) => {
 });
 
 //@desc Update Hero
-//@route POST /api/heros/:id
+//@route PUT /api/heroes/:id
 //@access  private
 const updateHero = asyncHandler(async (req, res) => {
     const hero = await Hero.findById(req.params.id);
@@ -52,7 +52,7 @@ const updateHero = asyncHandler(async (req, res) => {
         throw new Error("User don't have permisson to update other user contacts");
     }
     const updatedHero = await Hero.findByIdAndUpdate(
-        id,
+        req.params.id,
         req.body,
         { new: true }
     );

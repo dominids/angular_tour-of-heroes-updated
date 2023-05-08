@@ -27,7 +27,7 @@ export class HeroDetailComponent {
   }
 
   getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
   }
@@ -36,7 +36,7 @@ export class HeroDetailComponent {
   }
   save(): void {
     if (this.hero) {
-      this.heroService.updateHero(this.hero)
+      this.heroService.updateHero(String(this.route.snapshot.paramMap.get('id')),this.hero)
         .subscribe(() => this.goBack());
     }
   }
