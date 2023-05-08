@@ -14,6 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
+    console.log("tast");
     return this.http.post(`${this.apiUrl}/login`, {email,password});
   }
 
@@ -26,15 +27,15 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/register`, user, httpOptions)
   }
 
-  updateUser(user: User): Observable<User> {
-    //put musisz dać wszystkie wartości bo reszta będzie domyślna
-    // różni się w zależności od api
-    return this.http.put<User>(`${this.apiUrl}/${user._id}`, user)
-  }
+  // updateUser(user: User): Observable<User> {
+  //   //put musisz dać wszystkie wartości bo reszta będzie domyślna
+  //   // różni się w zależności od api
+  //   return this.http.put<User>(`${this.apiUrl}/${user._id}`, user)
+  // }
 
-  deleteUser(id: string): Observable<void> {
-    //delete daje ci najczęściej boolean^
-    //void bo nic nie dostajemy w odpowiedzi od servera 
-    return this.http.delete<void>(`${this.apiUrl}/${id}`)
-  }
+  // deleteUser(id: string): Observable<void> {
+  //   //delete daje ci najczęściej boolean^
+  //   //void bo nic nie dostajemy w odpowiedzi od servera 
+  //   return this.http.delete<void>(`${this.apiUrl}/${id}`)
+  // }
 }
