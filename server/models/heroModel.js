@@ -16,6 +16,7 @@ const heroSchema = mongoose.Schema({
     },
 }, {
     timestamps: true,
+    
 }
 );
 
