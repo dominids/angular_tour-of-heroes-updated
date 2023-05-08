@@ -11,15 +11,14 @@
             </div><br>
             <div class="form-group">
                 <label for="name">Password</label>
-                <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel"
-                    #heroName>
+                <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel">
                 <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
                     Name is required
                 </div>
             </div><br>
 
-            <!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid" -->
-                <!-- (click)="add(heroName.value,heroClass.value)" (click)="ngOnInit()">Submit</button> -->
+            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid"
+                >Submit</button>
             <p>You are not super user? Let's <a routerLink="/register">register</a></p>
         </form>
 

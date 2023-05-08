@@ -5,42 +5,37 @@ import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../service/message.service';
 import { Location } from '@angular/common';
 import { ListComponent } from '../list/list.component';
+import { Router, response } from 'express';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private router: AppRoutingModule,
+    private authService: AuthService
   ) { }
   heroes: Hero[] = [];
   submitted = false;
-  onSubmit() { this.submitted = true; }
   model = new user2('', '', '');
 
-  ngOnInit(): void {
-    this.getHeroes();
-  }
-  goBack(): void {
-    this.location.back();
-  }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
+  onSubmit() {
+    this.submitted = true;
+    const name= this.model.email.trim();
+    const password= this.model.password.trim();
 
-      .subscribe(heroes => this.heroes = heroes);
-  }
-  add(name: string, classes: string): void {
-    name = name.trim();
-    classes = classes.trim();
-    if (!name) { return; }
-    this.heroService.addHero({ name, class: classes } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
+    this.authService
+      .login(name, password)
+      .subscribe((response: any) => {
       });
   }
 }

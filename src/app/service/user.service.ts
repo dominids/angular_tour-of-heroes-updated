@@ -9,13 +9,14 @@ import { User } from '../hero';
 
 export class UserService {
 
-  private apiUrl = 'http://localhost:5000/api/heroes';
+  private apiUrl = 'http://localhost:5000/api/users';
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/1`);
+  login(email: string, password: string) {
+    return this.http.post(`${this.apiUrl}/login`, {email,password});
   }
+
 
   createUser(user: User): Observable<User> {
     console.log(user);

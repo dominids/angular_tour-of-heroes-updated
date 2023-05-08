@@ -12,6 +12,7 @@ import {
   // ...
 } from '@angular/animations';
 import { UserService } from './service/user.service';
+import {AuthService} from './service/auth.service'
 
 
 @Component({
@@ -53,7 +54,7 @@ import { UserService } from './service/user.service';
   ]
 })
 export class AppComponent implements OnInit {
-  constructor(){
+  constructor(public authService: AuthService){
   }
   title = 'Tour of Heroes';
   user='Login';
