@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
   constructor(public authService: AuthService){
   }
   title = 'Tour of Heroes';
-  user='Login';
   isOpen = false;
   ngOnInit(): void {
 

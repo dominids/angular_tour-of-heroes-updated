@@ -17,7 +17,8 @@
                 <app-hero-search></app-hero-search>
             </div>
             <div class="links">
-                <a routerLink="/login">{{user}}</a>
+                <a routerLink="/logout" *ngIf="authService.isLoggedIn$ | async">{{"LogOut"}}</a>
+                <a routerLink="/login" *ngIfElse>{{"LogIn"}}</a>
             </div>
         </nav>
         <div class="content element2">
