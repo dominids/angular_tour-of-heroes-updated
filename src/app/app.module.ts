@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //animations
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -32,6 +32,7 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

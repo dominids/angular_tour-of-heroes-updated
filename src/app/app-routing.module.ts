@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { IsAuthenticatedGuard } from './is-authenticated.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'heroes', component: HeroesComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'form', component: FormComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'detail/:id', component: HeroDetailComponent, canActivate: [IsAuthenticatedGuard] },

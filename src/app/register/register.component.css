@@ -20,11 +20,14 @@
 }
 
 .ng-valid[required],
-.ng-valid.required {
+.ng-valid.form-control {
     border-left: 5px solid #42A948;
     /* green */
 }
-
+.alert{
+    color: red;
+    font-size: 11px;
+}
 .ng-invalid:not(form) {
     border-left: 5px solid #a94442;
     /* red */

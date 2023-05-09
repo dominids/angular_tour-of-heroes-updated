@@ -1,23 +1,24 @@
 <div class="container">
-    <div [hidden]="submitted">
-        <form (ngSubmit)="onSubmit()" #heroForm="ngForm" name="form">
+    <div>
+        <form [formGroup]='loginForm' (ngSubmit)="loginUser()">
             <div class="form-group">
                 <h1>Login</h1>
                 <label for="name">Email</label>
-                <input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email" #email="ngModel">
+                <input type="email" class="form-control" formControlName="email">
+                <div class="alert alert-danger" *ngIf="email&& email.invalid && email.touched">
+                    Email is not valid
+                </div>
             </div><br>
-            <span ng-show="form.email.$error.email">Not a valid e-mail address</span>
             <div class="form-group">
                 <label for="name">Password</label>
-                <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel">
-                <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
-                    Name is required
+                <input type="password" class="form-control" formControlName="password">
+                <div class="alert alert-danger" *ngIf="password && password.invalid && password.touched">
+                    Password can't be empty
                 </div>
             </div><br>
 
-            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-            <p>You are not super user? Let's <a routerLink="/register">register</a></p>
+            <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Submit</button><br>
+            You are not a hero master? Let's <button style="padding: 8px;" class="btn btn-success" routerLink="/register">register</button>
         </form>
-
     </div>
 </div>

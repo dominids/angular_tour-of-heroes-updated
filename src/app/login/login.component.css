@@ -20,9 +20,14 @@
 }
 
 .ng-valid[required],
-.ng-valid.required {
+.ng-valid.form-control {
     border-left: 5px solid #42A948;
     /* green */
+}
+
+.alert {
+    color: red;
+    font-size: 11px;
 }
 
 .ng-invalid:not(form) {
@@ -52,7 +57,9 @@ body {
 }
 
 body,
-input[text], input[password], input[email] {
+input[text],
+input[password],
+input[email] {
     color: #333;
     font-family: Cambria, Georgia, serif;
 }
@@ -119,7 +126,7 @@ input[type="email"] {
     padding: .5rem;
     margin-left: 41px;
     border-radius: 4px;
-    float:right;
+    float: right;
 }
 
 select {
