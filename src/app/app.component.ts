@@ -55,7 +55,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class AppComponent implements OnInit {
-  constructor(public authService: AuthService, private router: Router){
+  constructor(public authService: AuthService){
   }
   title = 'Tour of Heroes';
   isOpen = false;
@@ -65,8 +65,8 @@ export class AppComponent implements OnInit {
   toggle() {
     this.isOpen = !this.isOpen;
   }
-  logout(){
-    localStorage.removeItem("Bearer");
-    this.router.navigate(['login']);
+  onLogout(event: Event){
+    event.preventDefault();
+    this.authService.logout();
   }
 }

@@ -16,6 +16,7 @@ import { ListComponent } from './list/list.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RegisterComponent } from './register/register.component';
     OpenCloseComponent,
     LoginComponent,
     RegisterComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

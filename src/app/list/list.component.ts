@@ -15,7 +15,7 @@ export class ListComponent implements OnInit{
   public restart(){
     this.getHeroes();
   }
-
+  
   ngOnInit(): void {
     this.getHeroes();
   }

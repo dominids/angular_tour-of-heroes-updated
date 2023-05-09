@@ -17,7 +17,7 @@
                 <app-hero-search></app-hero-search>
             </div>
             <div class="links">
-                <a *ngIf="authService.isLoggedIn$ | async; else login" (click)="logout()">Logout</a>
+                <a *ngIf="authService.isLoggedIn$ | async; else login" (click)="onLogout($event)">Logout</a>
                 <ng-template #login><a routerLink="/login">Login</a></ng-template>
             </div>
         </nav>
