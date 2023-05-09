@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'heroes', component: HeroesComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'form', component: FormComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'detail/:id', component: HeroDetailComponent, canActivate: [IsAuthenticatedGuard] },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];

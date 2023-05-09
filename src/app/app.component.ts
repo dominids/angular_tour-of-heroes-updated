@@ -64,6 +64,7 @@ export class AppComponent implements OnInit {
   }
   onLogout(event: Event){
     event.preventDefault();
+    this.isOpen=false;
     this.authService.logout();
   }
 }

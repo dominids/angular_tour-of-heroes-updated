@@ -1,7 +1,7 @@
 <div class="contaner">
     <div class="center">
         <nav class="element1">
-            <div class="menu-icon" (click)="toggle();" onclick="myFunction(this)">
+            <div class="menu-icon" (click)="toggle();" onclick="openMenu(this)" *ngIf="authService.isLoggedIn$ | async">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -14,7 +14,7 @@
                 <a routerLink="/heroes">Heroes</a>
             </div>
             <div class="search-bar">
-                <app-hero-search></app-hero-search>
+                <app-hero-search *ngIf="authService.isLoggedIn$ | async"></app-hero-search>
             </div>
             <div class="links">
                 <a *ngIf="authService.isLoggedIn$ | async; else login" (click)="onLogout($event)">Logout</a>
@@ -27,7 +27,7 @@
                     [@openClose]="isOpen ? 'open' : 'closed'" class="list"></app-list>
             </div>
             <div class="app">
-                <router-outlet *ngIf="authService.isLoggedIn$ | async"></router-outlet>
+                <router-outlet></router-outlet>
             </div>
         </div>
 
