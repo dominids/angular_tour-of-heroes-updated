@@ -2,7 +2,7 @@
     <ul class="heroes">
         <li *ngFor="let hero of heroes">
             <a routerLink="/detail/{{hero._id}}">
-                <span class="badge">{{hero._id}}</span><span class="badge2"> {{hero.name}} </span>
+                <img class="badge2" src="https://robohash.org/{{hero.name}}" height="auto" alt="{{hero}}"><span class="badge">{{hero._id}}</span><span class="badge2"> {{hero.name}} </span>
             </a>
             <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
         </li>

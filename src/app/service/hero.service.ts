@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, retry, tap } from 'rxjs/operators';
+import { ListService } from './list.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,8 @@ export class HeroService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private list: ListService) { }
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
@@ -62,9 +64,10 @@ export class HeroService {
   /** DELETE: delete the hero from the server */
   deleteHero(id: string): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
-
+    this.list.setMyData("restart");
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted hero id=${id}`)),
+      tap(_ => this.log(`deleted hero id=${id}`)
+      ),
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }

@@ -18,18 +18,19 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
     this.getHeroes();
   }
-  
+
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(
-      (response) => {
-        console.table(response);
-        this.heroes = response;}
-        );
-      }
-      delete(hero: Hero): void {
-        this.heroes = this.heroes.filter(h => h !== hero);
-        this.heroService.deleteHero(hero._id).subscribe();
-        this.list.setMyData("restart");
+      .subscribe(
+        (response) => {
+          console.table(response);
+          this.heroes = response;
+        }
+      );
+  }
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero._id).subscribe();
+    this.list.setMyData("restart");
   }
 }

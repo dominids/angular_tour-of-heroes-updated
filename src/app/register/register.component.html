@@ -1,6 +1,6 @@
 <div class="container">
     <div [hidden]="submitted">
-        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm" name="form">
             <div class="form-group">
                 <h1>Register</h1>
                 <label for="name">Username</label>
@@ -14,10 +14,8 @@
                 <label for="name">Email</label>
                 <input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email"
                     #email="ngModel">
-                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                    Name is required
-                </div>
             </div><br>
+            <span ng-show="form.email.$error.email">Not a valid e-mail address</span>
             <div class="form-group">
                 <label for="name">Password</label>
                 <input type="password" class="form-control" id="password" required [(ngModel)]="model.password"
