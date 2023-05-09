@@ -3,7 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './newHero/form.component';
 import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';

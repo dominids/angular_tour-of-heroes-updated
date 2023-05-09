@@ -11,7 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TestInterceptor } from './interceptor/test.interceptor';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './newHero/form.component';
 import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
