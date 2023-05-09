@@ -13,10 +13,8 @@ import { TestInterceptor } from './interceptor/test.interceptor';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
-import { OpenCloseComponent } from './open-close/open-close.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +26,8 @@ import { NavComponent } from './nav/nav.component';
     HeroSearchComponent,
     FormComponent,
     ListComponent,
-    OpenCloseComponent,
     LoginComponent,
     RegisterComponent,
-    NavComponent,
   ],
   imports: [
     BrowserModule,

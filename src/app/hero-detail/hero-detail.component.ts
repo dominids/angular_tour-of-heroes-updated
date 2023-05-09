@@ -3,6 +3,7 @@ import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from '../service/hero.service';
+import { ListService } from '../service/list.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -14,7 +15,8 @@ export class HeroDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private list:ListService
   ) { }
   submitted = false;
   onSubmit() { this.submitted = true; }
@@ -39,5 +41,6 @@ export class HeroDetailComponent {
       this.heroService.updateHero(String(this.route.snapshot.paramMap.get('id')),this.hero)
         .subscribe(() => this.goBack());
     }
+    this.list.setMyData("restart");
   }
 }

@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../service/message.service';
 import { Location } from '@angular/common';
 import { ListComponent } from '../list/list.component';
+import { ListService } from '../service/list.service';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +17,8 @@ export class FormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private list: ListService
   ) { }
   heroes: Hero[] = [];
   submitted = false;
@@ -45,5 +47,6 @@ export class FormComponent implements OnInit {
       .subscribe(hero => {
         this.heroes.push(hero);
       });
+    this.list.setMyData("restart");
   }
 }

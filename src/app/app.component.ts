@@ -1,7 +1,4 @@
-import { Component, HostBinding, ViewChild, NgModule, OnInit } from '@angular/core';
-import { ListComponent } from './list/list.component';
-import { CommonModule } from '@angular/common';
-import { HeroService } from './service/hero.service';
+import { ChangeDetectorRef, Component,OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -11,9 +8,8 @@ import {
   keyframes,
   // ...
 } from '@angular/animations';
-import { UserService } from './service/user.service';
 import {AuthService} from './service/auth.service'
-import { Router } from '@angular/router';
+import { ListService } from './service/list.service';
 
 
 @Component({
@@ -55,15 +51,16 @@ import { Router } from '@angular/router';
   ]
 })
 export class AppComponent implements OnInit {
-  constructor(public authService: AuthService){
+  constructor(public authService: AuthService, private list: ListService){
   }
   title = 'Tour of Heroes';
   isOpen = false;
   ngOnInit(): void {
-
   }
   toggle() {
     this.isOpen = !this.isOpen;
+    this.list.setMyData("restart");
+    
   }
   onLogout(event: Event){
     event.preventDefault();

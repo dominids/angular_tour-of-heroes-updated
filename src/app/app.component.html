@@ -1,7 +1,7 @@
 <div class="contaner">
     <div class="center">
         <nav class="element1">
-            <div class="menu-icon" (click)="toggle();"  onclick="myFunction(this)">
+            <div class="menu-icon" (click)="toggle();" onclick="myFunction(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -10,7 +10,7 @@
                 <a class="title2" routerLink="/dashboard">{{title}}</a>
             </div>
             <div class="links" *ngIf="authService.isLoggedIn$ | async">
-                <a  routerLink="/form" >New hero</a>
+                <a routerLink="/form">New hero</a>
                 <a routerLink="/heroes">Heroes</a>
             </div>
             <div class="search-bar">
@@ -23,11 +23,11 @@
         </nav>
         <div class="content element2">
             <div class="list">
-            <app-list class="list" style="z-index: -10; position: absolute" [@openClose]="isOpen ? 'open' : 'closed'"
-                class="list"></app-list>
+                <app-list class="list" style="z-index: -10; position: absolute"
+                    [@openClose]="isOpen ? 'open' : 'closed'" class="list"></app-list>
             </div>
             <div class="app">
-            <router-outlet></router-outlet>
+                <router-outlet></router-outlet>
             </div>
         </div>
 

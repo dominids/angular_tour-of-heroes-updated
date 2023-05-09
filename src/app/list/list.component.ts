@@ -1,7 +1,8 @@
-import { Component, OnInit,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, ChangeDetectorRef} from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../service/hero.service';
+import { ListService } from '../service/list.service';
 
 @Component({
   selector: 'app-list',
@@ -10,17 +11,23 @@ import { HeroService } from '../service/hero.service';
 })
 export class ListComponent implements OnInit{
   heroes: Hero[] = [];
-  constructor(private heroService: HeroService) { 
+  constructor(private heroService: HeroService, private list:ListService) { 
+    this.heroes=[];
   }
-  public restart(){
+  restart(){
+    
     this.getHeroes();
   }
-  
-  ngOnInit(): void {
-    this.getHeroes();
+
+
+  ngOnInit() {
+    this.list.myData$.subscribe(data => {
+      this.getHeroes();
+    });
   }
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
+
 }
